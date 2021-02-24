@@ -1,6 +1,6 @@
 # quadratic-sieve
 
-An implementation of quadratic sieve algorithm for factorization written in Python.
+An implementation of quadratic sieve algorithm for factorization.
 
 
 ## Technologies
