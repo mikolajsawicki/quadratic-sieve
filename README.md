@@ -3,13 +3,14 @@
 An implementation of quadratic sieve algorithm for factorization.
 
 
+
 ## Technologies
 Technologies used:
 * Python version: 3.9.1
 * numpy version: 1.20.1
   
 Development:
-* py.test verion: 6.2.2
+* py.test version: 6.2.2
 * wheel version: 0.36.2
 
 
@@ -57,3 +58,7 @@ $ python setup.py bdist_wheel
 ```
 $ pip install dist/quadratic_sieve-0.1.1-py3-none-any.whl
 ```
+
+## More information about the quadratic sieve algorithm:
+* [Smooth numbers and the quadratic sieve](https://www.msri.org/people/staff/levy/files/Book44/03carl.pdf)
+* [A Fast Algorithm for Gaussian Elimination over GF(2) and Its Implementation on the GAPP*](https://www.cs.umd.edu/~gasarch/TOPICS/factoring/fastgauss.pdf)
