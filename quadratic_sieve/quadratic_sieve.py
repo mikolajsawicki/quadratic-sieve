@@ -111,17 +111,18 @@ def factorize(n: int, b: Union[int, None] = None, base_size: Union[int, None] = 
     qs_print('Smoothness bound: ', b)
 
     if primes is None:
-        qs_print('Loading primes base...')
+        qs_print('Loading the primes base...')
 
         primes = get_smooth_primes(b)
 
         primes = [2] + [p for p in primes[1:] if legendre(n, p) == 1]
 
-    qs_print('Primes in base: ', len(primes))
+    qs_print('Primes in the base: ', len(primes))
 
     if base_size is None:
         base_size = len(primes)
 
+    qs_print('Size of the base: ', base_size)
     qs_print('Generating the base...')
     base = Base(n, primes, base_size)
     qs_print('The base has been generated.')
