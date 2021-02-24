@@ -1,0 +1,6 @@
+include quadratic_sieve/primes.txt
+
+# Include the README
+include *.md
+
+include LICENSE.txt

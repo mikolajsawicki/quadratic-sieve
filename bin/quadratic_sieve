@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+
+import quadratic_sieve as qs
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('n', type=int, help="Number to factorize.")
+parser.add_argument('-b', "--smoothness", type=int, help="Set smoothness bound.")
+parser.add_argument('-s', "--base_size", type=int, help="Set the size of generated QS base.")
+parser.add_argument('-l', "--loud", help="Display messages while computing.", action="store_true")
+
+# Read arguments from command line
+args = parser.parse_args()
+
+res = qs.factorize(args.n, b=args.smoothness, base_size=args.base_size, loud_mode=args.loud)
+if res is None:
+    print("Couldn't find any nontrivial combination. Try to choose better smoothness bound or base size.")
+else:
+    print('Found a solution.')
+    print('%s = %s * %s' % (args.n, res[0], res[1]))
