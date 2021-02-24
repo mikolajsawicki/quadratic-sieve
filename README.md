@@ -2,8 +2,6 @@
 
 An implementation of quadratic sieve algorithm for factorization written in Python.
 
-<!--TOC-->
-
 
 ## Technologies
 Technologies used:
