@@ -7,6 +7,7 @@ An implementation of quadratic sieve algorithm for factorization written in Pyth
 * [Testing](#testing)
 * [Install](#install)
 * [Run](#run)
+* [Options](#options)
 
 
 ## Technologies
@@ -18,13 +19,6 @@ Development:
 * py.test verion: 6.2.2
 * wheel version: 0.36.2
 
-## Testing
-Running the tests:
-
-```
-$ pip install pytest
-$ pytest
-```
 
 ## Install
 ```
@@ -34,4 +28,39 @@ $ pip install quadratic_sieve
 ## Run
 ```
 $ quadratic_sieve 12666334082118686111
+```
+
+## Running options
+```
+$ usage: quadratic_sieve [-h] [-b SMOOTHNESS] [-s BASE_SIZE] [-l] n
+$ 
+$ positional arguments:
+$   n                     Number to factorize.
+$
+$ optional arguments:
+$   -h, --help            show this help message and exit
+$   -b SMOOTHNESS, --smoothness SMOOTHNESS
+$                         Set smoothness bound.
+$   -s BASE_SIZE, --base_size BASE_SIZE
+$                         Set the size of generated QS base.
+$   -l, --loud            Display messages while computing.
+```
+
+## Development
+### Testing
+Running the tests:
+```
+$ pip install pytest
+$ pytest
+```
+
+### Distribution building
+```
+$ pip install wheel
+$ python setup.py dist_wheel
+```
+
+### Installing the built distribution
+```
+$ pip install dist/quadratic_sieve-0.1.1-py3-none-any.whl
 ```
