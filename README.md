@@ -57,7 +57,7 @@ $ pytest
 ### Distribution building
 ```
 $ pip install wheel
-$ python setup.py dist_wheel
+$ python setup.py bdist_wheel
 ```
 
 ### Installing the built distribution
