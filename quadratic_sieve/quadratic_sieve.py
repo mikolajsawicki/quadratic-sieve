@@ -64,7 +64,7 @@ def congruent(a: int, b: int, n: int) -> bool:
     return a % n == b % n
 
 
-def solve(base: Base) -> Union[Tuple[int, int], None]:
+def solve(base: Base) -> Union[set[int, int], None]:
     n = base.n
 
     for rows in fg.perfect_square_combinations(base.x_sq_minus_n_exp):
@@ -85,7 +85,8 @@ def solve(base: Base) -> Union[Tuple[int, int], None]:
         if not congruent(a, b, n) and not congruent(a, -b, n):
             factor = gcd(a - b, n)
 
-            return factor, n // factor
+            if factor != 1 and factor != n:
+                return {factor, n // factor}
 
     qs_print('Didn\'t find any nontrivial solution. Try changing the smoothness bound and base size.')
     return None
@@ -104,6 +105,12 @@ def factorize(n: int, b: Union[int, None] = None, base_size: Union[int, None] = 
     """
     global loud
     loud = loud_mode
+
+    negative = False
+
+    if n < 0:
+        n *= -1
+        negative = True
 
     if b is None:
         b = smoothness_bound(n)
@@ -129,4 +136,9 @@ def factorize(n: int, b: Union[int, None] = None, base_size: Union[int, None] = 
 
     qs_print('Searching for the right combination...')
 
-    return solve(base)
+    solution = solve(base)
+
+    if negative:
+        solution *= -1
+
+    return solution

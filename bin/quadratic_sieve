@@ -13,6 +13,9 @@ parser.add_argument('-l', "--loud", help="Display messages while computing.", ac
 # Read arguments from command line
 args = parser.parse_args()
 
+if not args.n >= 2:
+    print('n should be a natural number.')
+
 res = qs.factorize(args.n, b=args.smoothness, base_size=args.base_size, loud_mode=args.loud)
 if res is None:
     print("Couldn't find any nontrivial combination. Try to choose better smoothness bound or base size.")
